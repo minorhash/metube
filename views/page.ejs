@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <%include par/head %>
+    <%include par/nav%>
+  <body>
+
+<div class="container-fluid">
+    <!-- row -->
+<div class="row">
+  <div class="col" style="background-color:white;color:black">
+      
+<div class="card">
+  <div class="card-body">
+      page
+    <h1><%= title %></h1>
+  </div>
+  </div>
+
+   </div>
+   </div>
+
+    <!-- row -->
+
+<div class="row">
+
+</div>
+  <div class="col-md-9" style="background-color:white;color:black">
+
+      <%if(bod){%>
+      <%=bod.chor%>
+      <%}else{%>
+      <%}%>
+  </div>
+
+    
+</div>
+
+    <!-- row end -->
+</div>
+
+    <%include par/foot%>
+  </body>
+</html>

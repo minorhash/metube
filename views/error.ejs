@@ -1,0 +1,24 @@
+<%include par/head %>
+<%include par/nav %>
+<div class="container-fluid">
+    <!-- row -->
+<div class="row">
+    <%include par/1sid%>
+<div class="col-10" style="background-color:cornsilk">
+
+<h1><%= message %></h1>
+</div>
+<div class="col-1" style="background-color:white"></div>
+</div>
+
+<div class="row">
+    <%include par/1sid%>
+
+<h2><%= error.status %></h2>
+<pre><%= error.stack %></pre>
+</div>
+
+</div></div>
+
+<%include par/foot%>
+
