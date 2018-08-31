@@ -1,26 +1,35 @@
 var express = require('express');
 var router = express.Router();
+var db=require("dblo")
+// glob
+var par
+var typblo
+
+var typBlo=function(req, res, next) {
+
+par=req.params.id
+typblo=db.typBlo(par)
+next()}
+
 
 var chk=function(req, res, next) {
 
+console.log(par)
+console.log(typblo)
 next()}
 
 // get
 var gcb= function(req, res, next) {
-var par=req.params.id
-console.log(par)
-var bod=req.body.par
-console.log(bod)
 
 res.render("index", {
 title: par,
 par:par,
-bod:bod
+typblo:typblo
+
 });
 }
 
-
-router.get('/:id', [chk,gcb])
+router.get('/:id', [typBlo,chk,gcb])
 // post
 
 

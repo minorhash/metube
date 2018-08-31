@@ -30,12 +30,24 @@
    </div>
 
   <div class="col-md-9" style="background-color:white">
-      <%= par%><br>
-      <%if(bod){%>
-      <%= bod.pos%>
-      <%}else{%>
-      no bod
-      <%}%>
+<%if(typblo){%>
+
+<table class="table">
+
+    <tr class="table-info"><td>title</td><td>term</td>
+    </tr>
+<%for (var i=0;i<typblo.length;i++){%>
+
+    <tr><td>      <%=typblo[i].tit%>
+  </td><td>
+      <%=typblo[i].term%>
+
+  </td></tr>
+<%}%>
+</table>
+
+      <%}else{%>      no post      <%}%>
+      <br>
 
   </div>
 
