@@ -3,6 +3,7 @@ var router = express.Router();
 var cal=require("calendar-js")
 
 var utc,ju,jul,au,aug,augc,sep
+var pid
 
 var getDat=function(req, res, next) {
 utc = new Date().toJSON().slice(0,10).replace(/-/g,"/")
@@ -17,8 +18,9 @@ next()}
 
 
 var chk=function(req, res, next) {
-    console.log(au.month)
-    console.log(aug)
+    var bod=req.body
+    pid=req.params.id
+    console.log(pid)
 next()}
 
 // post
@@ -30,6 +32,7 @@ title: "schedule",
     jul:jul,
     au:au,
     aug:aug,
+    pid:pid,
 sep:sep
 });
 }
