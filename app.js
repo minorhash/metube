@@ -19,10 +19,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 var indexRouter = require('./routes/index');
 var add= require('./routes/add');
+var cal= require('./routes/cal');
+var sch= require('./routes/sch');
 var page= require('./routes/page');
 
 app.use('/', indexRouter);
 app.use('/', add);
+app.use('/', cal);
+app.use('/', sch);
 app.use('/', page);
 
 // catch 404 and forward to error handler

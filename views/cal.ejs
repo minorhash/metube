@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <%include par/head %>
+    <%include par/nav%>
+  <body>
+
+<div class="container-fluid">
+    <!-- row -->
+<div class="row">
+  <div class="col" style="background-color:white">
+<div class="card">
+  <div class="card-body">
+    <h1>calendar</h1>
+
+  </div>
+  </div>
+
+   </div>
+   </div>
+    <!-- row -->
+
+<div class="row">
+
+<div class="col-md-3" style="background-color:lavender">
+   </div>
+
+  <div class="col-md-9" style="background-color:white;font-size:24px">
+
+<%if(jul){%>
+      <%=jul[4]%><br>
+      <%}%>
+
+      <table class="table table-bordered">          <tr>
+      <%if(au){%>
+      <%=au.month%><br>
+
+      <% for(var i=0;i<5;i++){%>
+      <tr>
+      <% for(var j=0;j<7;j++){%>
+      <td>
+<form action="/sch-<%=aug[i][j]%>" method="post">
+
+<button type="submit" class="btn">
+      <%=aug[i][j] %>
+</button>
+          </form>
+      </td>
+      <%}%>
+      </tr>
+      <%}%>
+
+      <%}%>
+          </table>
+
+      <br>
+
+  </div>
+
+    
+</div>
+
+    <!-- row end -->
+</div>
+  </body>
+</html>
