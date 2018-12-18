@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <%include par/head %>
+    <%include par/nav%>
+  <body>
+
+<div class="container-fluid">
+    <!-- row -->
+<div class="row">
+  <div class="col" style="background-color:white">
+<div class="card">
+  <div class="card-body">
+    <h1><%= title %></h1>
+
+  </div>
+  </div>
+
+   </div>
+   </div>
+
+    <!-- row -->
+
+<div class="row">
+
+<div class="col-md-3" style="background-color:lavender">
+<form action="/add-<%=par%>" method="post">
+<input type="hidden" name="pos" value="3487">
+<button type="submit" class="btn btn-primary">add</button>
+</form>
+<br>
+<form action="/cal" method="post">
+<input type="hidden" name="pos" value="3487">
+<button type="submit" class="btn btn-primary">cal</button>
+</form>
+
+   </div>
+
+  <div class="col-md-9" style="background-color:white">
+<%if(typblo){%>
+
+<table class="table">
+
+    <tr class="table-info"><td>title</td><td>term</td>
+    </tr>
+<%for (var i=0;i<typblo.length;i++){%>
+
+    <tr><td>      <%=typblo[i].tit%>
+  </td><td>
+      <%=typblo[i].term%>
+
+  </td></tr>
+<%}%>
+</table>
+
+      <%}else{%>      no post      <%}%>
+      <br>
+
+  </div>
+
+    
+</div>
+
+    <!-- row end -->
+</div>
+  </body>
+</html>

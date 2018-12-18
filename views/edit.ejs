@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <%include par/head %>
+    <%include par/nav%>
+  <body>
+
+<div class="container-fluid">
+    <!-- row -->
+<div class="row">
+
+<div class="col-md-2" style="background-color:lavender">
+
+
+   </div>
+
+  <div class="col-md-10" style="background-color:white">
+      <span align="center" class="badge badge-primary">
+<%= idblo.rowid %>
+      </span><br><br>
+
+<%if(idblo){%>
+
+<form method="post"  action="/edit2-<%= idblo.rowid %>">
+<label for="tit">title </label>
+<input name="tit" type="text" class="form-control" value="<%= idblo.title %>">
+
+<label for="typ">type</label>
+<input name="typ" type="text" class="form-control" value="<%= idblo.type%>"><br>
+
+<label for="ter">term</label>
+<input name="ter" type="text" class="form-control" value="<%= idblo.term%>"><br>
+
+<label for="lin">link</label>
+<input name="lin" type="text" class="form-control" value="<%= idblo.link %>"><br>
+
+<label for="bod">body</label>
+<input name="bod" type="text" class="form-control" value="<%= idblo.body %>"><br>
+
+<%}else{%>      no post      <%}%>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+      <br>
+
+  </div>
+    
+</div>
+
+    <!-- row end -->
+</div>
+  </body>
+</html>

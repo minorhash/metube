@@ -5,32 +5,45 @@
   <body>
 
 <div class="container-fluid">
-    <!-- row -->
+    <!-- ------------ cont ---------------- -->
 <div class="row">
-  <div class="col" style="background-color:white">
+    <!-- row -->
+<div class="col" style="background-color:white">
       
 <div class="card">
-  <div class="card-body">
-    <h1> add <%= title %></h1>
-  </div>
+
+<div class="card-header">
+<h1> add <%= title %></h1>
+</div>
+<div class="card-body">
+<span class="badge badge-primary">
+<%= par %>
+</span>
+</div>
+
   </div>
 
    </div>
+    <!-- col -->
    </div>
-
     <!-- row -->
+
 
 <div class="row">
 
-</div>
+    <!-- row -->
   <div class="col-md-9" style="background-color:white">
-      <form action="/page-<%=par%>" method="post">
-    <label for="date">date:</label>
-    <input type="date" class="form-control" name="dat">
-    <label for="tit">title:</label>
-    <input type="text" class="form-control" name="tit">
-    <label for="type">type:</label>
-    <input type="text" class="form-control" name="type" value="<%=par%>">
+
+<form action="/add2-<%=par%>" method="post">
+<label for="ter">term:</label>
+<input type="ter" class="form-control" name="ter">
+<label for="tit">title:</label>
+<input type="text" class="form-control" name="tit">
+<label for="tit">link:</label>
+<input type="text" class="form-control" name="lin">
+<label for="tit">body:</label>
+<input type="text" class="form-control" name="bod">
+
   <br>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -39,8 +52,9 @@
 
     
 </div>
+<!-- row end -->
 
-    <!-- row end -->
 </div>
+    <!-- ------------ cont ---------------- -->
   </body>
 </html>

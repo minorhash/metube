@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<%include par/head %>
+<%include par/nav%>
+<body>
+
+<div class="container-fluid">
+<!-- row -->
+
+<div class="row">
+
+<div class="col-md-2" style="background-color:lavender">
+    <%= par %>
+</div>
+
+<div class="col-md-10" style="background-color:white">
+
+    <%= bod.title %>
+<table class="table" style="color:black">
+
+<tr class="table-info"><td>type</td><td>term</td>
+</tr>
+<% if(bod){ %>
+<tr><td>
+<%= bod.typ %>
+</td><td>
+<%= bod.ter %>
+</td></tr>
+
+<tr class="table-primary"><td colspan=2>
+title
+</td></tr>
+<tr ><td>
+<%= bod.tit %>
+
+</td></tr>
+<tr class="table-warning"><td colspan=2>
+link
+</td></tr>
+
+<tr><td>
+<%= bod.lin %>
+</td></tr>
+<% } else { %>
+no bod
+<% } %>
+<tr class="table-light"><td colspan="2">
+
+</td></tr>
+<tr class="table-light"><td colspan="2">
+</td></tr>
+
+</table>
+
+<br>
+
+  </div>
+
+    
+</div>
+
+    <!-- row end -->
+</div>
+  </body>
+</html>

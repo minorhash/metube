@@ -15,13 +15,13 @@ next()}
 var chk=function(req, res, next) {
 
 console.log(par)
-console.log(typblo)
+console.log(typblo[0].rowid)
 next()}
 
 // get
 var gcb= function(req, res, next) {
 
-res.render("index", {
+res.render("type", {
 title: par,
 par:par,
 typblo:typblo
@@ -29,7 +29,7 @@ typblo:typblo
 });
 }
 
-router.get('/', [typBlo,chk,gcb])
+router.get('/:id', [typBlo,chk,gcb])
 // post
 
 

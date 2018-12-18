@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <%include par/head %>
+    <%include par/nav%>
+  <body>
+
+<div class="container-fluid">
+<!-- row -->
+
+<div class="row">
+
+<div class="col-md-2" style="background-color:lavender">
+left
+   </div><!-- col -->
+
+  <div class="col-md-10" style="background-color:white">
+
+      <div class="card">
+      <div class="card-header">
+      <%= par %>
+  </div><!-- head -->
+      <div class="card-body">
+          term: <%= bod.ter %><br>
+          title: <%= bod.tit %><br>
+          body: <%= bod.bod %><br>
+          id: <%= titblo.rowid %><br>
+  </div>  <!-- body -->
+  </div>  <!-- card -->
+  </div>  <!-- col -->
+    
+</div><!-- row end -->
+</div><!-- cont -->
+  </body>
+</html>
