@@ -5,27 +5,37 @@
   <body>
 
 <div class="container-fluid">
-    <!-- row -->
 <div class="row">
+    <!-- row -->
   <div class="col" style="background-color:white">
+    <!-- col -->
 <div class="card">
   <div class="card-header">
     <h3 align="center"><%= title %></h3>
+  </div><!-- head -->
 
-  </div>
-  </div>
+  </div><!-- card -->
 
-   </div>
-   </div>
 
-    <!-- row -->
+   </div><!-- col -->
+   </div><!-- row -->
 
 <div class="row">
 
 <div class="col-md-2" style="background-color:lavender">
+    <% if(usr){ %>
+    <span class="badge badge-info">
+        <%= usr!==null %></span>
     <% include par/left %>
+    <% include par/out %>
+    <% } else { %>
+    <span class="badge badge-info">
+        no usr</span><br><br>
+    <% include par/login %>
+    <% } %>
 
-   </div>
+
+</div><!-- col2 -->
 
   <div class="col-md-10" style="background-color:white">
 <%if(typblo){%>

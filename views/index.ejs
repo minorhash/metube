@@ -23,8 +23,17 @@
 <div class="row">
 
 <div class="col-md-3" style="background-color:lavender">
+    <% if(usr){ %>
+    <span class="badge badge-info">
+        <%= usr %></span>
+    <% include par/out %>
+    <% } else { %>
+    <span class="badge badge-info">
+        no usr</span><br><br>
+    <% include par/login %>
+    <% } %>
 
-   </div>
+</div><!-- col 3 -->
 
   <div class="col-md-9" style="background-color:white">
       <%= title %>

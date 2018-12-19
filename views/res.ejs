@@ -5,20 +5,16 @@
   <body>
 
 <div class="container-fluid">
-    <!-- row -->
+
 <div class="row">
   <div class="col" style="background-color:white">
 <div class="card">
-  <div class="card-body">
-    <h1><%= title %></h1>
-
-  </div>
-  </div>
-
-   </div>
-   </div>
-
-    <!-- row -->
+<div class="card-body">
+<h3 align="center"><%= title %></h3>
+</div><!-- card-body -->
+</div><!-- card -->
+</div><!-- col -->
+</div>    <!-- row -->
 
 <div class="row">
 
@@ -32,8 +28,7 @@
 <input type="hidden" name="pos" value="3487">
 <button type="submit" class="btn btn-primary">del</button>
 </form>
-
-   </div>
+</div><!-- col2 -->
 
   <div class="col-md-10" style="background-color:white">
 <%if(typblo){%>
@@ -61,12 +56,10 @@
       <%}else{%>      no post      <%}%>
       <br>
 
-  </div>
-
+  </div><!-- col 10 -->
     
-</div>
+</div><!-- row end -->
+</div><!-- col end -->
 
-    <!-- row end -->
-</div>
-  </body>
+</body>
 </html>
