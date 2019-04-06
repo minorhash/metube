@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const db=require("dblo")
+const db=require("codblo")
 // glob
 let par="",sess="",sid=""
 let getusr="",typblo=""
 let usr="",pss=""
+let img=""
 
 const getUsr=function(req, res, next) {
 if(req.body){
@@ -14,7 +15,7 @@ pss=req.body.pss
     sess=req.session
 usr=sess.usr
 pss=sess.pss
-    console.log("no req")}
+console.log("no req")}
 
 try{getusr=db.getUsr(req.body.usr,req.body.pss)
 if(getusr==undefined)throw "no getusr"
@@ -38,6 +39,14 @@ sid=req.session.id
 
 next()}
 
+
+const getLs=function(req, res, next) {
+const ls=require("ls")
+img=ls("public/ppcandy/*.jpg")
+console.log(img[0].name)
+
+next()}
+
 const typBlo=function(req, res, next) {
 
 par=req.params.id
@@ -46,9 +55,6 @@ next()}
 
 const chk=function(req, res, next) {
 
-console.log(getusr)
-console.log(usr)
-console.log(pss)
 console.log(req.session.id)
 console.log(sess)
 next()}
@@ -57,10 +63,10 @@ next()}
 const gcb= function(req, res, next) {
 
 res.render("index", {
-title: par,par:par,usr:usr,typblo:typblo
+title: par,par:par,usr:usr,typblo:typblo,ls:img
 });
 }
-const arr= [getUsr,getSid,typBlo,chk,gcb]
+const arr= [getUsr,getSid,getLs,typBlo,chk,gcb]
 
 router.get('/', arr)
 router.post('/', arr)

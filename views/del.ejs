@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <%include par/head %>
+    <%include par/nav%>
+  <body>
+
+<div class="container-fluid">
+    <!-- ------------ cont ---------------- -->
+<div class="row">
+    <!-- row -->
+<div class="col" style="background-color:white">
+      
+<div class="card">
+
+<div class="card-header">
+<h1> add <%= title %></h1>
+</div>
+<div class="card-body">
+<span class="badge badge-primary">
+<%= par %>
+</span>
+</div>
+
+  </div>
+
+   </div>
+    <!-- col -->
+   </div>
+    <!-- row -->
+
+
+<div class="row">
+
+    <!-- row -->
+  <div class="col-md-9" style="background-color:white">
+
+<form action="/add2-<%=par%>" method="post">
+<label for="ter">term:</label>
+<input type="ter" class="form-control" name="ter">
+<label for="tit">title:</label>
+<input type="text" class="form-control" name="tit">
+<label for="tit">link:</label>
+<input type="text" class="form-control" name="lin">
+<label for="tit">body:</label>
+<input type="text" class="form-control" name="bod">
+
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+  </div>
+
+    
+</div>
+<!-- row end -->
+
+</div>
+    <!-- ------------ cont ---------------- -->
+  </body>
+</html>

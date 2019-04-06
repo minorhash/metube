@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db=require("dblo")
+var db=require("codblo")
 // glob
 var par,id,title
 var idblo

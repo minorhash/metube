@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db=require("dblo")
+const db=require("codblo")
 // glob
 let par="",id="",title="",bod="",titblo=""
 

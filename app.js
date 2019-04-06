@@ -11,11 +11,11 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(logger('dev'));
 
 app.use(session({
   secret: 'secret',
@@ -28,29 +28,15 @@ app.use(session({
   }
 }));
 
-var indexRouter = require('./routes/index');
-var type= require('./routes/type');
-var res= require('./routes/res');
-var out= require('./routes/out');
+var arr=["index","type","page","vid","out",
+    "add","add2","edit","edit2","del","del2"]
 
-var add= require('./routes/add');
-var add2= require('./routes/add2');
-var edit= require('./routes/edit');
-var edit2= require('./routes/edit2');
-var del= require('./routes/del');
-var del2= require('./routes/del2');
+for (var i=0;i<arr.length;i++){
+    arr[i]=require("./routes/"+arr[i])
+    app.use("/",arr[i])
 
-app.use('/', indexRouter);
-app.use('/', type);
-app.use('/', res);
-app.use('/', out);
+}
 
-app.use('/', add);
-app.use('/', add2);
-app.use('/', edit);
-app.use('/', edit2);
-app.use('/', del);
-app.use('/', del2);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

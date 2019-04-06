@@ -1,35 +1,46 @@
-var express = require('express');
-var router = express.Router();
-var db=require("dblo")
+const express = require('express');
+const router = express.Router();
+const db=require("codblo")
 // glob
-var par
-var typblo
+let par="",id="",title="",bod="",titblo=""
 
-var typBlo=function(req, res, next) {
+const insBod=function(req, res, next) {
 
 par=req.params.id
-typblo=db.typBlo(par)
+id=req.body.rowid
+bod=req.body
+
+const body=bod.bod
+    const tit=bod.tit
+    const ter=bod.ter
+    const lin=bod.lin
+    try{db.insBlo(par,ter,tit,lin,body)}
+    catch(err){console.log(err)}
+
+try{titblo=db.titBlo(tit)}
+catch(err){console.log(err)}
+
+
 next()}
 
-
-var chk=function(req, res, next) {
+const chk=function(req, res, next) {
 
 console.log(par)
-console.log(typblo[0].rowid)
+console.log(titblo)
+console.log(bod)
 next()}
 
 // get
-var gcb= function(req, res, next) {
+const gcb= (req, res, next)=>
 
-res.render("type", {
-title: par,
+res.render("del2", {
 par:par,
-typblo:typblo
-
+bod:bod,titblo:titblo
 });
-}
 
-router.get('/:id', [typBlo,chk,gcb])
+const arr=[insBod,chk,gcb]
+
+router.post('/del2-:id',arr)
 // post
 
 

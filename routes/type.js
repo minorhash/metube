@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db=require("dblo")
+var db=require("codblo")
 // glob
 var par,typblo,getusr
 var usr,pss,sess
@@ -12,12 +12,7 @@ sess=req.session
 
 try{getusr=db.getUsr(usr,pss)
 console.log(getusr)
-
-}catch(err){
-console.log(err)
-console.log(getusr)
-}
-
+}catch(err){console.log(err)}
 
 next()}
 
@@ -47,10 +42,16 @@ next()}
 var typBlo=function(req, res, next) {
 
 par=req.params.id
-typblo=db.typBlo(par)
 sess=req.session
+    //typblo=db.typBlo(par)
 next()}
 
+const getLs=function(req, res, next) {
+const ls=require("ls")
+img=ls("public/ppcandy/*.jpg")
+console.log(img[0].name)
+
+next()}
 
 var chk=function(req, res, next) {
 
@@ -63,11 +64,11 @@ next()}
 var gcb= function(req, res, next) {
 
 res.render("type", {
-    title: par,par:par,typblo:typblo,usr:usr
+title: par,par:par,usr:usr,ls:img
 
 });
 }
-var arr=[getUsr,typBlo,chk,gcb]
+var arr=[getUsr,typBlo,getLs,chk,gcb]
 router.get('/type-:id',arr)
 // post
 router.post('/type-:id',arr)

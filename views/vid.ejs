@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<%include par/head %>
+<%include par/nav%>
+  <body>
+
+<div class="container-fluid">
+<div class="row">
+    <!-- row -->
+  <div class="col" style="background-color:white">
+    <!-- col -->
+<div class="card">
+  <div class="card-header">
+    <h3 align="center"><%= title %></h3>
+  </div><!-- head -->
+
+  </div><!-- card -->
+
+
+   </div><!-- col -->
+   </div><!-- row -->
+
+<div class="row">
+
+<div class="col-md-2" style="background-color:lavender">
+<ul class="nav flex-column">
+<% for (var i=0;i<ls.length;i++){ %>
+<li class="nav-item">
+<a class="nav-link" href="vid-<%= par %>-<%= ls[i].name %>">
+<img src="<%= par %>/<%= ls[i].name %>.jpg" width="180">
+</a>
+
+</li>
+<% } %>
+
+  </ul>
+</div><!-- col2 -->
+
+<div class="col-md-10">
+
+<video width="980" autoplay  controls>
+<source src="vid/<%= par %>/<%= vid %>.mp4" type="video/mp4">
+Your browser does not support the video tag.
+ </video> 
+
+<br>
+
+</div>
+    
+</div>
+
+    <!-- row end -->
+</div>
+  </body>
+</html>

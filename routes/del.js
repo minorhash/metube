@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db=require("dblo")
+var db=require("codblo")
 // glob
 var par
 var typblo
@@ -21,7 +21,7 @@ next()}
 // get
 var gcb= function(req, res, next) {
 
-res.render("type", {
+res.render("del", {
 title: par,
 par:par,
 typblo:typblo
@@ -29,7 +29,7 @@ typblo:typblo
 });
 }
 
-router.get('/:id', [typBlo,chk,gcb])
+router.get('/del-:id', [typBlo,chk,gcb])
 // post
 
 

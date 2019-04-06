@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <%include par/head %>
+    <%include par/nav%>
+  <body>
+
+<div class="container-fluid">
+    <!-- row -->
+<div class="row">
+    <div class="col" >
+<div class="card">
+  <div class="card-body">
+      <h4 align="center"><%= par %></h4>
+<div class="row">
+    <% for (var i=0;i<ls.length;i++){ %>
+<div class="col">
+<a href="vid-<%= par %>-<%= ls[i].name %>">
+<img src="<%= par %>/<%= ls[i].name %>.jpg" width=150>
+</a>
+<br>
+<%= ls[i].name %>
+</div>
+
+    <% } %>
+</div>
+
+
+    <br>
+  </div><!-- body -->
+  </div><!-- card -->
+
+
+
+   </div><!-- col -->
+   </div><!-- row -->
+
+
+</div><!-- cont -->
+  </body>
+</html>
